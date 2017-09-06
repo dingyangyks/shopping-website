@@ -1,3 +1,4 @@
+
 /*top*/
 .top-content{
     width: 1200px;
@@ -116,17 +117,17 @@
     background-color: #2369ae;
 }
 
-.nav_content{
+.nav-content{
     width: 1200px;
     height: 100%;
     margin: 0 auto;
 }
 
-.nav_content a{
+.nav-content a{
     color: #fff;
 }
 
-.nav_content ul li{
+.nav-content ul li{
     float: left;
     font-size: 20px;
     line-height: 50px;
@@ -144,9 +145,10 @@
 
 /*底部版权去*/
 .footer{
-    float: left;
+    padding-top: 10px;
     width: 100%;
     height: 150px;
+    margin-top: 10px;
     background-color: #ccc;
 }
 
@@ -179,3 +181,11 @@
 .footer-content a:hover{
     color: #f01414;
 }
+
+
+@media screen and (max-width:1200px){
+    .logo,.nav{
+        width:1200px;
+    }
+}
+
