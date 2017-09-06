@@ -1,10 +1,10 @@
 $(document).ready(function () {
     // 创建全部分类
+    var display_link = '../html/com-display.html';
     createItem(classify_item, display_link);
 
     // 创建详细分类
     var detail_link = '../html/com-details.html';
-    var indexArr = [1, 2, 3, 4, 5];
     for (var i = 0; i < 5; i++) {
         createDatail(obj['detail_item' + (i + 1)], detail_link, i);
     }
@@ -15,12 +15,13 @@ $(document).ready(function () {
     // 轮播图
     creatImg();
 })
+
+
 var classify_item = [['<strong>手机</strong>', '<strong>数码</strong>', '合约机', '荣耀', '单反', '智能手表'],
 ['<strong>电脑</strong>', '<strong>硬件外设</strong>', '装机宝', '笔记本', '台式机', '超极本'],
 ['<strong>大家电</strong>', '<strong>电视</strong>', '空调', '冰箱', '洗衣机'],
 ['<strong>厨房电器</strong>', '<strong>生活电器</strong>', '空气净化机', '微波炉', '通讯设备'],
 ['<strong>食品/饮料/生鲜</strong>', '粮油', '进口', '方便面', '零食']];
-var display_link = '../html/com-display.html';
 
 var obj = {
     detail_item1: [['装机配件', 'CPU', '硬盘', '内存', '显示', '智能显示器', '主板', '显卡', '机箱', '电源', '散热器', '声卡', '服务器配件', '拓展卡'],
@@ -62,12 +63,14 @@ var img_item = ['../img/banner/5995829aN84f0e71b.jpg',
     '../img/banner/599fcc82N9ff1002f.jpg',
     '../img/banner/598abe88N80fb9275.jpg',
     '../img/banner/59954e1dNb2e1cfb5.jpg',
-    '../img/banner/599a868aNf83ce587.jpg']
+    '../img/banner/599a868aNf83ce587.jpg'];
 
+
+// 创建分类
 function createItem(classify_item, display_link) {
     var item_html = '';
     $.each(classify_item, function (index, item) {
-        item_html += '<li class="firsttittle">';
+        item_html += '<li class="first-tittle">';
         $.each(item, function (subindex, subitem) {
             item_html += '<a href =' + display_link + '>' + subitem + '</a>';
         })
@@ -76,7 +79,7 @@ function createItem(classify_item, display_link) {
     $('.classify ul').html(item_html);
 }
 
-
+// 创建详细分类
 function createDatail(detail_item, detail_link, index) {
     var detail_html = '';
     $.each(detail_item, function (index, item) {
@@ -86,24 +89,25 @@ function createDatail(detail_item, detail_link, index) {
         })
         detail_html += '</li>';
     })
-    $('.firsttittle').eq(index).append('<div class="details"><ul>' + detail_html + '</ul></div>');
+    $('.first-tittle').eq(index).append('<div class="details"><ul>' + detail_html + '</ul></div>');
 }
 
 // 分类选项卡
 function tabs() {
-    $('#classify-ul').delegate('.firsttittle', 'mouseover', function () {
+    $('#classify-ul').delegate('.first-tittle', 'mouseover', function () {
         $(this).children('.details').show();
     })
-    $('#classify-ul').delegate('.firsttittle', 'mouseout', function () {
+    $('#classify-ul').delegate('.first-tittle', 'mouseout', function () {
         $(this).children('.details').hide();
     })
 }
 
-
+// 轮播图
 var imgNum = 1;
 var moveEnd = true;
 var imgTimer = null;
-// 轮播图
+
+// 插入轮播图片
 function creatImg() {
     var img_html = '';
     img_html = '<li><img class="holder" data-src=' + img_item[img_item.length - 1] + '></li>';
@@ -115,6 +119,7 @@ function creatImg() {
     loadImage(createSlideshow);
 }
 
+// 创建轮播
 function createSlideshow() {
     $('.slideshow ul').attr('width', function () {
         // 设置ul的宽度
@@ -132,12 +137,13 @@ function createSlideshow() {
         imgMove(1);
     })
 
-    $('.slideshow').on('mouseover',imgStop).on('mouseout',imgAuto);
+    $('.slideshow').on('mouseover', imgStop).on('mouseout', imgAuto);
 
     imgAuto();
     pointerEvent();
 }
 
+// 图片懒加载
 function loadImage(callback) {
     var list = $('.holder');
     var len = list.length;
@@ -159,6 +165,7 @@ function loadImage(callback) {
     })
 }
 
+// 图片移动
 function imgMove(index) {
     if (!moveEnd) {//在点击一开始就要判断是否正在移动
         return;
@@ -194,14 +201,14 @@ function imgMove(index) {
     //     console.log($('.slideshow li:eq(0)'));
     //     console.log($('.slideshow li').eq(0))
     //     console.log($('.slideshow li').eq(0))
-        
+
     //     if (imgBox.position().left === 0) {
     //         imgBox.css('left',reSecondLeft);
     //     } else if(imgBox.position().left === reFirstLeft) {
     //         imgBox.css('left',initLeft);
     //     }
     // }
-    
+
     function resetPosition() {
         moveEnd = true;//到到目标 停止移动 状态改为true 意为停止
 
@@ -222,27 +229,30 @@ function imgMove(index) {
 
 }
 
+// 焦点改变颜色
 function pointColor() {
-    $('.imgPoint').children().removeClass('select');
-    newImgNum = imgNum == 0 ? 4 : (imgNum == 6 ? 0 : imgNum - 1 )
-    $('.imgPoint').children().eq(newImgNum).addClass('select');
-    // console.log($('.imgPoint').children().eq(imgNum));
+    $('.img-point').children().removeClass('select');
+    newImgNum = imgNum == 0 ? 4 : (imgNum == 6 ? 0 : imgNum - 1)
+    $('.img-point').children().eq(newImgNum).addClass('select');
+    // console.log($('.img-point').children().eq(imgNum));
 }
 
+// 焦点点击事件
 function pointerEvent() {
-    $('.imgPoint').delegate('i','click',function (event) {
+    $('.img-point').delegate('i', 'click', function (event) {
         var target = event.target;
         imgMove(target.dataset.index - imgNum);
     })
 }
 
-
+// 自动播放
 function imgAuto() {
     imgTimer = setInterval(function () {
         imgMove(-1);
     }, 5000);
 }
 
+// 停止自动播放
 function imgStop() {
     clearInterval(imgTimer);
 }
