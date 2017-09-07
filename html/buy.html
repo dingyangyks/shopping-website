@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>购买物流页</title>
+     <!--公共样式-->
     <link rel="stylesheet" href="../css/init.css">
     <link rel="stylesheet" href="../css/top-foot.css">
+    <!--主页样式-->
+    <link rel="stylesheet" href="../css/buy.css">
 </head>
 
 <body>
@@ -52,7 +55,7 @@
         </div>
         <!--导航栏区-->
         <div class="nav">
-            <div class="nav_content">
+            <div class="nav-content">
                 <ul>
                     <a href="com-display.html"><li>全部商品分类<i class="nav-down"></i></li></a>
                     <a href="com-display.html"><li>数码城</li></a>
@@ -65,6 +68,112 @@
             </div>
         </div>
     </div>
+    <!--内容-->
+     <div class="logistics-wrap">
+            <div class="record">
+                <h3 class="log-tittle">收货信息</h3>
+                <div class="received-content">
+                    <div class="rec-left">选择地区:</div>
+                    <div class="rec-right">
+                        <select class="address" name="" id="">
+                            <option  value="">北京市 海淀区 五环内</option>
+                            <option  value="">西安市 碑林区 三环内</option>
+                            <option  value="">长沙市 岳麓区 三环内</option>
+                            <option  value="">南昌市 前湖区 三环内</option>
+                            <option  value="">宜昌市 猇亭区 三环内</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="received-content">
+                    <div class="rec-left">详细地址:</div>
+                    <div class="rec-right">
+                        <input type="text" placeholder="最多输入26个汉字">
+                    </div>
+                </div>
+                <div class="received-content">
+                    <div class="rec-left">收货人:</div>
+                    <div class="rec-right">
+                        <input type="text" placeholder="最多是个汉字">
+                    </div>
+                </div>
+                <div class="received-content">
+                    <div class="rec-left">手机:</div>
+                    <div class="rec-right">
+                        <input type="text" placeholder="如123456789">
+                    </div>
+                </div>
+                <div class="sure-address">
+                    <img src="../img/images/sh_bg.gif" alt="">
+                </div>
+            </div>
+            <div class="record">
+                <h3 class="log-tittle">支付方式</h3>
+                <div class="pay-type">
+                    <input type="radio" name="paytype">微信支付 用微信扫一扫可支付
+                    <br/>
+                    <input type="radio" name="paytype">货到付款 送货上门后再付款,使用现金或刷银行卡
+                </div>
+            </div>
+            <div class="record">
+                <h3 class="log-tittle">发票信息</h3>
+                <div class="invoice">
+                    <div class="invoice-wrap">
+                        <input type="checkbox">需要发票<br/>
+                    </div>
+                    <div class="invoice-wrap">
+                         发票类型:
+                        <select name="" id="" class="invoice-select">
+                            <option value="">商业零售发票</option>
+                            <option value="">个人零售发票</option>
+                            <option value="">企业发票</option>
+                        </select><br/>
+                    </div>
+                    <div class="invoice-wrap">
+                        发票抬头:
+                        <select name="" id="" class="invoice-select">
+                            <option value="">个人</option>
+                            <option value="">商业</option>
+                            <option value="">企业</option>
+                        </select>
+                        <input type="text" placeholder="阿斯顿">
+                        <br/>
+                    </div>
+                </div>
+            </div>
+            <div class="record">
+                <h3 class="log-tittle">送货清单</h3>
+                <div class="wareList-table">
+                    <div class="wareList-tr">
+                        <div class="wareList-th">商品名称</div>
+                        <div class="wareList-th">单价</div>
+                        <div class="wareList-th">返现</div>
+                        <div class="wareList-th">数量</div>
+                        <div class="wareList-th">小计</div>
+                    </div>
+                     <div class="wareList-tr">
+                        <div class="wareList-td">
+                            <img src="../img/images/shopImg.png" alt="">
+                            <p>海信 三门冰箱 银色</p>
+                            <p>[赠品] 保鲜盒,抽真空,海信冰洗赠品</p>
+                            </br>
+                            <p><a href="">若您对包装有特殊要求,请在此留言</a></p>
+                        </div>
+                        <div class="wareList-td">&yen;1459.00</div>
+                        <div class="wareList-td">&yen;0.00</div>
+                        <div class="wareList-td">1</div>
+                        <div class="wareList-td">&yen;1459.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="record">
+                <h3 class="log-tittle">订单结算</h3>
+                <div class="total">
+                    <span class="totalWord">总计</span>
+                    <span><strong class="totalCount">&yen;1459.00</strong></span>
+                    <div class="sumbit-money">提交订单</div>
+                </div>
+            </div>
+        </div>
     <!--底部版权区-->
     <div class="footer">
         <div class="footer-content">

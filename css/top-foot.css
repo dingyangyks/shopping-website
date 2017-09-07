@@ -135,6 +135,10 @@
     cursor: pointer;
 }
 
+.nav-content ul li:hover{
+    background-color: #24aff1;
+}
+
 .nav-down{
     width: 10px;
     height: 10px;
