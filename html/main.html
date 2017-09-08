@@ -14,6 +14,8 @@
     <!--jq-->
     <script src="../js/jquery-3.1.1.js"></script>
     <script src="../js/main-jq.js"></script>
+    <!--公共脚本-->
+    <script src="../js/public.js"></script>
     <!--引入myfocus-->
     <script src="/home/wy/code/ding/NBA/电商网站/myfocus/js/myfocus-2.0.1.min.js"></script>
     <script src="/home/wy/code/ding/NBA/电商网站/myfocus/js/mf-pattern/mF_games_tb.js"></script>
@@ -37,7 +39,7 @@
                 </div>
                 <div class="top-inAndOut">
                     <span>欢迎来到慕课网!</span>
-                    <a href="sign-login.html">[登录]</a>
+                    <a id="sign-up">[登录]</a>
                     <a href="sign-login.html">现在注册</a>
                 </div>
             </div>
@@ -128,7 +130,7 @@
         </div>
         <!--商品展示部分-->
         <div class="itemShow-wrap">
-            <div class="item-show">
+            <div class="item-show" id="ele">
                 <div class="item-tittle">
                     <img src="../img/icon/shopIcon2.gif" alt="商品图标" class="item-logo">
                     <span>家用电脑</span>
@@ -147,7 +149,7 @@
                     </div>
                 </div>
             </div>
-            <div class="item-show">
+            <div class="item-show" id="food">
                 <div class="item-tittle">
                     <img src="../img/icon/shopIcon2.gif" alt="商品图标" class="item-logo">
                     <span>食品酒水</span>
@@ -160,6 +162,15 @@
                     </div>
                 </div>  
             </div>
+        </div>
+        <!--侧边栏-->
+        <div class="sidebar">
+            <ul>
+                <li id="to-top">置顶</li>
+                <li><a href="#ele">家电</a></li>
+                <li><a href="#food">食品</a></li>
+                <li><a href=""><img src="../img/icon/shopCar.png" class="shop-car"></a></li>
+            </ul>
         </div>
     </div>
 
@@ -179,6 +190,43 @@
                 <li><img src="../img/images/3a.jpg" alt=""></li>
                 <li><img src="../img/images/4a.jpg" alt=""></li>
             </ul>
+        </div>
+    </div>
+
+    <!--登录弹出层-->
+    <div class="login-wrap" id="login-wrap">
+        <div class="login">
+            <div class="login-item">
+                    <p class="item-word">邮箱/用户名/已验证手机:</p>
+                    <div class="form-wrap">
+                        <i class="use-icon"></i>
+                        <input type="text" class="login-input">
+                    </div>
+            </div>
+            <div class="login-item">
+                <p class="item-word">密码:</p>
+                <div class="form-wrap">
+                    <i class="key-icon"></i>
+                    <input type="password" class="login-input">
+                </div>
+            </div>
+            <div class="login-item">
+                <input type="radio" name="loginType">自动登录
+                <input type="radio" name="loginType">安全控件登录
+                <a href="">忘记密码?</a>
+            </div>
+            <div class="login-item">
+                <input type="button" value="登录" class="login-btn">
+            </div>
+            <div class="login-item">
+                <span>使用合作网络账号登录</span>
+                <a href="">QQ</a>
+                <a href="">网易</a>
+                <a href="">豆瓣</a>
+                <a href="">微信</a>
+            </div>
+            <div class="to-sign"><a href="../html/sign-login.html">去注册</a></div>
+            <div class="sign-close" id="sign-close">关闭</div>
         </div>
     </div>
 </body>

@@ -26,6 +26,7 @@
 
 .top a{
     color: #226ce8;
+    cursor: pointer;
 }
 
 /*logo区*/
@@ -193,3 +194,115 @@
     }
 }
 
+
+/*登录弹出层*/
+.login-wrap{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 99;
+    display: none;
+}
+
+.login{
+    width: 410px;
+    border: 1px solid #ccc;
+    border-top: 2px solid #ea8736;
+    font-size: 20px;
+    position:relative;
+    background-color:#fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.login-tittle{
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.item-word{
+    text-align: left;
+    /*font-size: 20px; */
+    padding-left: 60px;  
+}
+
+.login-item{
+    text-align: center;
+    margin: 24px 20px;
+    /*overflow: hidden;*/
+}
+
+.form-wrap{
+    overflow: hidden;
+    width: 310px;
+    margin: 5px auto
+}
+
+.login-item .use-icon,.login-item .key-icon{
+    display: block;
+    width: 30px;
+    height: 30px;
+    float: left;
+}
+
+.login-item .use-icon{
+    background: url(../img/icon/user_icon.jpg) center right no-repeat;
+}
+
+.login-item .key-icon{
+    background: url(../img/icon/password_icon.jpg) center right no-repeat;
+}
+
+.login-input{
+    float: left;
+    width: 250px;
+    height: 20px;
+    
+}
+
+.login-item a{
+    color:#207ada;
+}
+
+.login-btn{
+    width: 200px;
+    height: 45px;
+    font-size: 20px;
+}
+
+.to-sign{
+    width: 80px;
+    height: 40px;
+    background:#6dd70e;
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.to-sign a{
+    color: #fff;
+}
+
+.sign-close{
+    width: 50px;
+    height: 20px;
+    font-size: 15px;
+    position: absolute;
+    background-color: #207ada;
+    color: #fff;
+    right: 0px;
+    text-align: center;
+    top: 0;
+    font-weight: bold;
+    cursor: pointer;
+}

@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="../css/top-foot.css">
     <!--主页样式-->
     <link rel="stylesheet" href="../css/con-details.css">
+    <!--jq-->
+    <script src="../js/jquery-3.1.1.js"></script>
+    <!--公共脚本-->
+    <script src="../js/public.js"></script>
 </head>
 
 <body>
@@ -25,7 +29,7 @@
                 </div>
                 <div class="top-inAndOut">
                     <span>欢迎来到慕课网!</span>
-                    <a href="sign-login.html">[登录]</a>
+                    <a id="sign-up">[登录]</a>
                     <a href="sign-login.html">现在注册</a>
                 </div>
             </div>
@@ -170,9 +174,8 @@
                     <div class="buy-left">
                         <img src="../img/images/shop_car.jpg" alt="">
                     </div>
-
                     <div class="buy-right">
-                        立即购买
+                        <a href="../html/buy.html">立即购买</a>
                     </div>
                 </div>
             </div>
@@ -229,7 +232,7 @@
                         </p>
                         <img src="../img/images/pad.jpg" alt="">
                     </div>
-                </div>商品介绍结束
+                </div><!--商品介绍结束-->
                 <div class="evaluation-content">
                     <div>
                         <span><strong>商品评价</strong></span>
@@ -339,6 +342,43 @@
                 <li><img src="../img/images/3a.jpg" alt=""></li>
                 <li><img src="../img/images/4a.jpg" alt=""></li>
             </ul>
+        </div>
+    </div>
+
+    <!--登录弹出层-->
+    <div class="login-wrap" id="login-wrap">
+        <div class="login">
+            <div class="login-item">
+                    <p class="item-word">邮箱/用户名/已验证手机:</p>
+                    <div class="form-wrap">
+                        <i class="use-icon"></i>
+                        <input type="text" class="login-input">
+                    </div>
+            </div>
+            <div class="login-item">
+                <p class="item-word">密码:</p>
+                <div class="form-wrap">
+                    <i class="key-icon"></i>
+                    <input type="password" class="login-input">
+                </div>
+            </div>
+            <div class="login-item">
+                <input type="radio" name="loginType">自动登录
+                <input type="radio" name="loginType">安全控件登录
+                <a href="">忘记密码?</a>
+            </div>
+            <div class="login-item">
+                <input type="button" value="登录" class="login-btn">
+            </div>
+            <div class="login-item">
+                <span>使用合作网络账号登录</span>
+                <a href="">QQ</a>
+                <a href="">网易</a>
+                <a href="">豆瓣</a>
+                <a href="">微信</a>
+            </div>
+            <div class="to-sign"><a href="../html/sign-login.html">去注册</a></div>
+            <div class="sign-close" id="sign-close">关闭</div>
         </div>
     </div>
 </body>

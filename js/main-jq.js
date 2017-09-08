@@ -14,6 +14,11 @@ $(document).ready(function () {
 
     // 轮播图
     creatImg();
+
+    // 置顶
+    showSide();
+    $(window).on('scroll', showSide);
+    $('#to-top').on('click', toTop);
 })
 
 
@@ -257,3 +262,27 @@ function imgStop() {
     clearInterval(imgTimer);
 }
 
+// 显示侧边栏
+function showSide() {
+    var scrTop = $(window).scrollTop();
+    scrTop > 30 ? $('.sidebar').show() : $('.sidebar').hide();
+}
+
+// 点击置顶
+var timer = null;
+function toTop() {
+    clearInterval(timer);
+    timer = setInterval(function () {
+        var scrTop = $(window).scrollTop();
+        var speed = scrTop / 10;
+        if (scrTop > 30) {
+            $(window).scrollTop(function () {
+                 
+                 return scrTop - speed;
+            });
+        } else {
+            $(window).scrollTop(0);
+            clearInterval(timer);
+        }
+    }, 10)
+}

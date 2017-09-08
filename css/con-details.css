@@ -188,6 +188,10 @@
     background-color: #f68600;
 }
 
+.buy-right a{
+    color: #fff;
+}
+
 .buy-right,.buy-left{
     cursor: pointer;
 }

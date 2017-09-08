@@ -2,7 +2,7 @@
 .body-wrap{
     width: 1200px;
     margin: 0 auto;
-    overflow: hidden;
+    position: relative;
 }
 
 
@@ -99,6 +99,8 @@
 .slideshow>ul>li{
     float: left;
 }
+
+
 
 /*按钮*/
 .slideshow-left-btn {
@@ -219,3 +221,34 @@
 .item-content-left>img{
     width: 210px;
 }
+
+
+/*侧边栏*/
+.sidebar{
+    /*width: 100px;*/
+    position: fixed;
+    right: 100px;
+    bottom: 168px;
+    font-size: 14px;
+    text-align: center;
+    display: none;
+}
+
+.sidebar li{
+    width: 34px;
+    height: 30px;
+    border: 1px solid #ddd;
+    line-height: 34px;
+    color: #2369ae;
+    cursor: pointer;
+}
+
+.sidebar a{
+     color: #2369ae;
+}
+
+.shop-car{
+    display: block;
+    width: 34px;
+}
+
